@@ -2,20 +2,21 @@
 #define MOTOR_H
 
 #include <wiringPi.h>
+#include "helpers.hpp"
 
 class Motor {
 private:
-    int mEnable, mPin1, mPin2;
+    Pin mEnable, mPin1, mPin2;
     int mSpeed;
 public:
-    Motor(int enable, int pin1, int pin2);
+    Motor(Pin enable, Pin pin1, Pin pin2);
     ~Motor() = default;
 
     int getSpeed() const;
     void setSpeed(int speed);
 
     void drive() const;
-    void stop(bool) const;
+    void stop(bool full=false) const;
 };
 
 #endif

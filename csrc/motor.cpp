@@ -1,7 +1,11 @@
 #include "motor.hpp"
 
-Motor::Motor(int enable, int pin1, int pin2)
-    : mEnable(enable), mPin1(pin1), mPin2(pin2) {}
+Motor::Motor(Pin enable, Pin pin1, Pin pin2) 
+: mEnable(enable), mPin1(pin1), mPin2(pin2) {
+    pinMode(mEnable, OUTPUT);
+    pinMode(mPin1, OUTPUT);
+    pinMode(mPin2, OUTPUT);
+}
 
 int Motor::getSpeed() const {
     return mSpeed;

@@ -3,14 +3,14 @@
 all: build run
 build: compile link
 run:
-	./bin/main.x
+	./main.x
 compile:
-	g++ -c csrc/main.cpp
+	g++ -c csrc/main.cpp csrc/motor.cpp
 link:
-	g++ main.o -o bin/main.x -lwiringPi
+	g++ main.o motor.o -o main.x -lwiringPi
 pch:
 	g++ csrc/pch.hpp
 clean:
-	rm -rf *.o *.x
+	rm -f *.o *.x
 
 
