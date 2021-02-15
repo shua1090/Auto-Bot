@@ -1,0 +1,7 @@
+WiringPi
+.vscode
+__pycache__
+
+*.o
+*.exe
+*.x
