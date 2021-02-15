@@ -5,6 +5,9 @@ Motor::Motor(Pin enable, Pin pin1, Pin pin2)
     pinMode(mEnable, OUTPUT);
     pinMode(mPin1, OUTPUT);
     pinMode(mPin2, OUTPUT);
+
+    mSpeed = 75;
+    assert(softPwmCreate(mEnable, mSpeed, 100) == 0);
 }
 
 int Motor::getSpeed() const {
@@ -15,15 +18,18 @@ void Motor::setSpeed(int speed) {
 }
 
 void Motor::drive() const {
-    digitalWrite(mEnable, HIGH);
+    // digitalWrite(mEnable, HIGH);
+    softPwmWrite(mEnable, mSpeed);
     digitalWrite(mPin1, HIGH);
     digitalWrite(mPin2, LOW);
 }
 
 void Motor::stop(bool full) const {
-    digitalWrite(mEnable, LOW);
+    // digitalWrite(mEnable, LOW);
+    softPwmWrite(mEnable, 0);
     if (full) {
         digitalWrite(mPin1, LOW);
         digitalWrite(mPin2, LOW);
+        softPwmStop(mEnable);
     }
 }
