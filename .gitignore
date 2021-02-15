@@ -1,6 +1,7 @@
 WiringPi
 .vscode
 __pycache__
+csrc/waste
 
 *.o
 *.exe

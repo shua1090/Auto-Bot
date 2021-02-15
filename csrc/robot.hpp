@@ -14,4 +14,9 @@ public:
     ~Robot() = default;
 };
 
+Robot::Robot(Motor& lhs, Motor& rhs) {
+    mLhs = &lhs; 
+    mRhs = &rhs;
+}
+
 #endif
