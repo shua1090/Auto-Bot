@@ -18,14 +18,12 @@ void Motor::setSpeed(int speed) {
 }
 
 void Motor::drive() const {
-    // digitalWrite(mEnable, HIGH);
     softPwmWrite(mEnable, mSpeed);
     digitalWrite(mPin1, HIGH);
     digitalWrite(mPin2, LOW);
 }
 
 void Motor::stop(bool full) const {
-    // digitalWrite(mEnable, LOW);
     softPwmWrite(mEnable, 0);
     if (full) {
         digitalWrite(mPin1, LOW);

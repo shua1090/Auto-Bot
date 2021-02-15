@@ -1,6 +1,6 @@
 .SILENT:
 
-FILES = csrc/main.cpp csrc/motor.cpp
+FILES = csrc/main.cpp # csrc/motor.cpp
 LINKS = -lwiringPi -lpthread
 
 all: build run
