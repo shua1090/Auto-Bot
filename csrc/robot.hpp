@@ -7,7 +7,8 @@
 
 class Robot {
 private:
-    Motor* mLhs, *mRhs;
+    Motor* mLhs;
+    Motor* mRhs;
 public:
     Robot(Motor& lhs, Motor& rhs);
     Robot() = default;

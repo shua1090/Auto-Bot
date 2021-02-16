@@ -22,7 +22,7 @@ for line in pins.splitlines():
    left = re.search(r"\|\s+(\d+)\s+(\d+)", line)
    right = re.search(r"^\s+(\d+)\s+(\d+)", line)
    if left:
-      pinList.append( (int(left.groups()[0]), int(left.groups()[1])) )
+      pinList.append( (int(left.groups()[0]),  int(left.groups()[1])) )
    if right:
       pinList.append( (int(right.groups()[1]), int(right.groups()[0])) )
 
