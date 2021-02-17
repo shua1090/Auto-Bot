@@ -7,14 +7,14 @@
 class Motor {
 private:
     Pin mEnable, mPin1, mPin2;
-    int* mDefaultSpeed;
+    // int* mDefaultSpeed;
 public:
     Motor() = default;
     Motor(Pin enable, Pin pin1, Pin pin2);
-    Motor(Pin enable, Pin pin1, Pin pin2, int& defSpeed);
+    // Motor(Pin enable, Pin pin1, Pin pin2, int& defSpeed);
     ~Motor();
 
-    void drive(bool dir) const;
+    // void drive(bool dir) const;
     void drive(bool dir, int speed) const;
     void stop() const;
 };
@@ -28,10 +28,10 @@ Motor::Motor(Pin enable, Pin pin1, Pin pin2)
     softPwmCreate(mEnable, 0, 100);
 }
 
-Motor::Motor(Pin enable, Pin pin1, Pin pin2, int& defSpeed)
-    : Motor(enable, pin1, pin2) {
-    mDefaultSpeed = &defSpeed;
-}
+// Motor::Motor(Pin enable, Pin pin1, Pin pin2, int& defSpeed)
+//     : Motor(enable, pin1, pin2) {
+//     mDefaultSpeed = &defSpeed;
+// }
 
 Motor::~Motor() {
     softPwmWrite(mEnable, 0);
@@ -46,9 +46,9 @@ void Motor::drive(bool dir, int speed) const {
     digitalWrite(mPin2, dir ^ 1);
 }
 
-void Motor::drive(bool dir) const {
-    drive(dir, *mDefaultSpeed);
-}
+// void Motor::drive(bool dir) const {
+//     drive(dir, *mDefaultSpeed);
+// }
 
 void Motor::stop() const {
     drive(0, 0);

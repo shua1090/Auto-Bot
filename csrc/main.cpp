@@ -6,9 +6,7 @@ int main() {
     wiringPiSetup();
 
     Motor left(P11, P13, P15);
-    // Motor right(P18, P12, P16);
+    Motor right(P18, P12, P16);
 
-    const int min = 20;
-    const int max = 100;
-
+    Robot robot(&left, &right);
 }
