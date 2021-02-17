@@ -10,8 +10,8 @@ private:
     Motor* mLhs;
     Motor* mRhs;
 public:
-    Robot(Motor& lhs, Motor& rhs);
     Robot() = default;
+    Robot(Motor& lhs, Motor& rhs);
     ~Robot() = default;
 };
 
