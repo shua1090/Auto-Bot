@@ -16,4 +16,7 @@ pch:
 clean:
 	rm -f *.o *.x
 
-
+.PHONY: test
+test:
+	g++ -c -fPIC test/foo.cpp -o foo.o
+	g++ -shared foo.o -o test/libfoo.so 
