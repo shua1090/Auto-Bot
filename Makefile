@@ -1,17 +1,18 @@
 .SILENT:
 
 FILES = csrc/main.cpp
-LINKS = -lwiringPi -lpthread
+INCLUDE = -Iinclude/WiringPi/wiringPi
+LINKS = -Llib -lwiringPi # -lpthread
 
 all: build run
 build: compile link
 run:
-	./main.x
+	./lib/main.x
 compile:
-	g++ -c $(FILES)
+	armg++ -c -Wall -Werror $(FILES) $(INCLUDE)
 link:
-	g++ main.o -o main.x $(LINKS)
+	armg++ main.o -o lib/main.x $(LINKS)
 pch:
-	g++ csrc/pch.hpp
+	armg++ csrc/pch.hpp
 clean:
 	rm -f *.o *.x

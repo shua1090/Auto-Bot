@@ -2,8 +2,8 @@
 #define PCH_H
 
 #include <iostream>
-#include <assert.h>
+// #include <assert.h>
 #include <wiringPi.h>
-#include <softPwm.h>
+// #include <softPwm.h>
 
 #endif
