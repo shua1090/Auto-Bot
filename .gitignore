@@ -1,9 +1,7 @@
-WiringPi
 .vscode
 __pycache__
-csrc/waste
-pysrc/venv
-test
+include
+lib
 
 *.o
 *.exe
